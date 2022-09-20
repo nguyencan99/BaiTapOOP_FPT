@@ -11,7 +11,11 @@ HoGiaDinh::HoGiaDinh(std::vector<Nguoi*> thanhVien, int soNha)
 }
 HoGiaDinh::~HoGiaDinh()
 {
+    for (int i = 0; i < pthanhVien.size(); i++)
+    {
+        delete pthanhVien[i];
 
+    }
 }
 void HoGiaDinh::setThanhVien(std::vector<Nguoi*> thanhVien)
 {

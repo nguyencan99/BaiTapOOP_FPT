@@ -1,6 +1,7 @@
 #include "Fresher.h"
 #include<string>
 #include<iostream>
+#include"CheckValidation.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ Fresher::Fresher()
 	Graduation_rank			= 0;
 	Education				= " ";
 }
-Fresher::Fresher(date G_date, int G_rank, string edu)
+Fresher::Fresher(thoiGian G_date, int G_rank, string edu)
 {
 	Graduation_date = G_date;
 	Graduation_rank = G_rank;
@@ -28,11 +29,11 @@ Fresher::~Fresher()
 {
 
 }
-void Fresher::setGraduationDate(date G_date)
+void Fresher::setGraduationDate(thoiGian G_date)
 {
 	Graduation_date = G_date;
 }
-date Fresher::getGraduationDate()
+thoiGian Fresher::getGraduationDate()
 {
 	return Graduation_date;
 }
@@ -52,10 +53,25 @@ string Fresher::getEducation()
 {
 	return Education;
 }
+int	 Fresher::getEmployeeType()
+{
+	return TypeFresher;
+}
 void Fresher::EnterInfo()
 {
 	Employee::EnterInfo();
-	cout << "Enter graduation date: ";	cin >> Graduation_date.day, Graduation_date.month, Graduation_date.year;
+	cout << "Enter graduation date: ";	
+	cout << "Enter graduation day:";	cin >> Graduation_date.day;
+	cout << "Enter graduation month:";	cin >> Graduation_date.month;
+	cout << "Enter graduation year:";	cin >> Graduation_date.year;
+	if (!checkDate(Graduation_date.day, Graduation_date.month, Graduation_date.year))
+	{
+		cout << "Enter graduation date: ";
+		cout << "Enter graduation day:";	cin >> Graduation_date.day;
+		cout << "Enter graduation month:";	cin >> Graduation_date.month;
+		cout << "Enter graduation year:";	cin >> Graduation_date.year;
+	}
+
 	cin.ignore(32767, '\n');
 	cout << "Enter graduation rank: ";	cin >> Graduation_rank;
 	cin.ignore(32767, '\n');

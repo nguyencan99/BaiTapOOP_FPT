@@ -12,14 +12,14 @@ Intern::Intern()
 }
 Intern::Intern(string majors, int semester, string university)
 {
-	Majors = majors;
-	Semester = semester;
+	Majors			= majors;
+	Semester		= semester;
 	University_name = university;
 }
 Intern::Intern(Intern& intern)
 {
-	Majors = intern.Majors;
-	Semester = intern.Semester;
+	Majors			= intern.Majors;
+	Semester		= intern.Semester;
 	University_name = intern.University_name;
 }
 Intern::~Intern()
@@ -50,9 +50,15 @@ string Intern::getUniversity()
 {
 	return University_name;
 }
+
+int	 Intern::getEmployeeType()
+{
+	return TypeIntern;
+}
 void Intern::EnterInfo()
 {
 	Employee::EnterInfo();
+	cin.ignore(32767, '\n');
 	cout << "Enter Majors: ";			getline(cin, Majors);
 	cout << "Enter semester: ";			cin >> Semester;
 	cin.ignore(32767, '\n');

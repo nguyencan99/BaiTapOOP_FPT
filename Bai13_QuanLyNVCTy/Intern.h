@@ -20,6 +20,7 @@ public:
     int getSemester();
     void setUniversity(string university);
     string getUniversity();
+    int	 getEmployeeType();
     void EnterInfo();
     void ShowInfo();
 };

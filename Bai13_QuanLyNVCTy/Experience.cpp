@@ -35,6 +35,10 @@ string Experience::getProSkill()
 {
 	return ProSkill;
 }
+int	 Experience::getEmployeeType()
+{
+	return TypeExperience;
+}
 void Experience::EnterInfo()
 {
 	Employee::EnterInfo();
@@ -45,6 +49,6 @@ void Experience::EnterInfo()
 void Experience::ShowInfo()
 {
 	Employee::ShowInfo();
-	cout << "Experience In Year: " << ExpInYear << endl;
-	cout << "Skills: " << ProSkill << endl;
+	cout << "Experience In Year: "	<< ExpInYear << endl;
+	cout << "Professional Skills: " << ProSkill << endl;
 }

@@ -17,6 +17,7 @@ public:
     int getExpInYear();
     void setProSkill(string proSkill);
     string getProSkill();
+    int	 getEmployeeType();
     void EnterInfo();
     void ShowInfo();
 };

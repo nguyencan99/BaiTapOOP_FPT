@@ -140,17 +140,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Certificate.h" />
+    <ClInclude Include="CheckValidation.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeManagement.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="Experience.h" />
     <ClInclude Include="Fresher.h" />
     <ClInclude Include="Intern.h" />
+    <ClInclude Include="Library.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Certificate.cpp" />
+    <ClCompile Include="CheckValidation.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="EmployeeManagement.cpp" />
     <ClCompile Include="Experience.cpp" />
     <ClCompile Include="Fresher.cpp" />
     <ClCompile Include="Intern.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

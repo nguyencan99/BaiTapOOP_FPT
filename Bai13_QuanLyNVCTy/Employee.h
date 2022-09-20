@@ -1,51 +1,47 @@
 #ifndef _EMPLOYEE_H_
 #define _EMPLOYEE_H_
+
 #include<iostream>
 #include<string>
+#include<vector>
+#include "Certificate.h"
+#include"Library.h"
+
 
 using namespace std;
-struct date
-{
-	int day;
-	int month;
-	int year;
-};
-enum employeeType
-{
-	Experience,
-	Fresher, 
-	Intern,
-};
 
-class Employee
+class Employee/*: public Certificate*/
 {
 private:
-	int			ID;
+	string			ID;
 	string		FullName;
-	date		BirthDay;
+	thoiGian		BirthDay;
 	string		Phone;
 	string		Email;
 	int			Employee_type;
-	static int	Employee_count;//@@
+	//static int	Employee_count;//@@
+	//std::vector<Certificate> Certi;
 public:
 	Employee();
-	Employee(int ID, string	FullName, date BirthDay, string Phone, string Email, int Employee_type);
+	Employee(string id, string fullName, thoiGian birthday, string phone, string email, int eType);
 	Employee(Employee& employee);
-	~Employee();
-	void	setID(int id);
-	int		getID();
+	virtual ~Employee();
+	void	setID(string id);
+	string		getID();
 	void	setFullName(string fullName);
 	string	getFullName();
-	void	setBirthday(date birthday);
-	date	getBirthday();
+	void	setBirthday(thoiGian birthday);
+	thoiGian	getBirthday();
 	void	setPhone(string phone);
 	string	getPhone();
 	void	setEmail(string email);
 	string	getEmail();
-	void	setEmployeeType(int eType);
-	virtual int		getEmployeeType();
+	//static int getEmployeeCount();
+	virtual int		getEmployeeType()=0;
 	virtual void	EnterInfo();
 	virtual void	ShowInfo();
+	//virtual void    EnterCirtificates();
+	//virtual void    ShowCertificates();
 };
 
 #endif // !_EMPLOYEE_H_

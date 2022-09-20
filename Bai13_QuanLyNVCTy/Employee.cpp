@@ -1,8 +1,9 @@
 #include "Employee.h"
+#include "CheckValidation.h"
 
 Employee::Employee()
 {
-	ID				= 0;
+	ID				= " ";
 	FullName		= " ";
 	BirthDay.day	= 0;
 	BirthDay.month	= 0;
@@ -10,9 +11,9 @@ Employee::Employee()
 	Phone			= " ";
 	Email			= " ";
 	Employee_type	= 0;
-	Employee_count++;
+	//Employee_count++;
 }
-Employee::Employee(int id, string fullName, date birthday, string phone, string email, int eType)
+Employee::Employee(string id, string fullName, thoiGian birthday, string phone, string email, int eType)
 {
 	ID				= id;
 	FullName		= fullName;
@@ -20,7 +21,7 @@ Employee::Employee(int id, string fullName, date birthday, string phone, string 
 	Phone			= phone;
 	Email			= email;
 	Employee_type	= eType;
-	Employee_count++;
+	//Employee_count++;
 }
 Employee::Employee(Employee& employee)
 {
@@ -30,17 +31,17 @@ Employee::Employee(Employee& employee)
 	Phone			= employee.Phone;
 	Email			= employee.Email;
 	Employee_type	= employee.Employee_type;
-	Employee_count	= employee.Employee_count;
+	//Employee_count++;
 }
 Employee::~Employee()
 {
 
 }
-void Employee::setID(int id)
+void Employee::setID(string id)
 {
 	ID = id;
 }
-int	Employee::getID()
+string	Employee::getID()
 {
 	return ID;
 }
@@ -52,11 +53,11 @@ string Employee::getFullName()
 {
 	return FullName;
 }
-void Employee::setBirthday(date birthday)
+void Employee::setBirthday(thoiGian birthday)
 {
 	BirthDay = birthday;
 }
-date Employee::getBirthday()
+thoiGian Employee::getBirthday()
 {
 	return BirthDay;
 }
@@ -76,26 +77,54 @@ string Employee::getEmail()
 {
 	return Email;
 }
-void Employee::setEmployeeType(int eType)
-{
-	Employee_type = eType;
-}
-int	 Employee::getEmployeeType()
-{
-	return Employee_type;
-}
+
+//int Employee::getEmployeeCount()
+//{
+//	return Employee_count;
+//}
+
 void Employee::EnterInfo()
 {
 	cout << "________________INFORMATION__________________" << endl;
 	cout << "___________ ENTER EMPLOYEE IMFORMATION:___________" << endl;
 	cout << "Enter ID: ";				cin >> ID;		
 	cin.ignore(32767, '\n');
+
+	//check name
 	cout << "Enter fullname: ";			getline(cin, FullName);
-	cout << "Enter Birthday: ";			cin >> BirthDay.day, BirthDay.month,BirthDay.year;
+	while (!checkName(FullName))
+	{
+		cout << "Enter fullname: ";			getline(cin, FullName);
+	}
+
+	//check date
+	cout << "Enter Birthday: \n";
+	cout << "Enter day: ";				cin >> BirthDay.day;
+	cout << "Enter month: ";			cin >> BirthDay.month;
+	cout << "Enter year: ";				cin >> BirthDay.year;
+	while (!checkDate(BirthDay.day, BirthDay.month, BirthDay.year))
+	{
+		cout << "Enter Birthday: \n";
+		cout << "Enter day: ";			cin >> BirthDay.day;
+		cout << "Enter month: ";		cin >> BirthDay.month;
+		cout << "Enter year: ";			cin >> BirthDay.year;
+	}
 	cin.ignore(32767, '\n');
-	cout << "Enter phone: ";			cin >> FullName;
+
+	//check phone
+	cout << "Enter phone: ";			cin >> Phone;
+	while (!checkPhone(Phone))
+	{
+		cout << "Enter phone: ";		cin >> Phone;
+	}
+
+	//check mail
 	cout << "Enter email: ";			cin >> Email;
-	cout << "Enter employee type: ";	cin >> Employee_type;
+	while (!checkEmail(Email))
+	{
+		cout << "Enter email: ";			cin >> Email;
+	}
+
 }
 void Employee::ShowInfo()
 {
@@ -108,3 +137,25 @@ void Employee::ShowInfo()
 	cout << "Email: "		  << Email			<< endl;
 	cout << "Employee type: " << Employee_type	<< endl;
 }
+
+//void Employee::EnterCirtificates()
+//{
+//	int num_Certi;
+//	
+//	cout << "Enter the number of certificates you submit: ";
+//	cin >> num_Certi;
+//	for (int i = 0; i < num_Certi; i++)
+//	{
+//		Certificate p_Certi;
+//		p_Certi.EnterCertificateInfo();
+//		Certi.push_back(p_Certi);
+//	}
+//}
+//
+//void Employee::ShowCertificates()
+//{
+//	for (int i = 0; i < Certi.size(); i++)
+//	{
+//		Certi[i].ShowCertificateInfo();
+//	}
+//}
