@@ -20,7 +20,7 @@ private:
 	string		Email;
 	int			Employee_type;
 	//static int	Employee_count;//@@
-	//std::vector<Certificate> Certi;
+	std::vector<Certificate> Certi;
 public:
 	Employee();
 	Employee(string id, string fullName, thoiGian birthday, string phone, string email, int eType);
@@ -40,8 +40,8 @@ public:
 	virtual int		getEmployeeType()=0;
 	virtual void	EnterInfo();
 	virtual void	ShowInfo();
-	//virtual void    EnterCirtificates();
-	//virtual void    ShowCertificates();
+	virtual void    EnterCirtificates();
+	virtual void    ShowCertificates();
 };
 
 #endif // !_EMPLOYEE_H_

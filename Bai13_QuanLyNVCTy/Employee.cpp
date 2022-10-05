@@ -138,24 +138,24 @@ void Employee::ShowInfo()
 	cout << "Employee type: " << Employee_type	<< endl;
 }
 
-//void Employee::EnterCirtificates()
-//{
-//	int num_Certi;
-//	
-//	cout << "Enter the number of certificates you submit: ";
-//	cin >> num_Certi;
-//	for (int i = 0; i < num_Certi; i++)
-//	{
-//		Certificate p_Certi;
-//		p_Certi.EnterCertificateInfo();
-//		Certi.push_back(p_Certi);
-//	}
-//}
-//
-//void Employee::ShowCertificates()
-//{
-//	for (int i = 0; i < Certi.size(); i++)
-//	{
-//		Certi[i].ShowCertificateInfo();
-//	}
-//}
+void Employee::EnterCirtificates()
+{
+	int num_Certi;
+	
+	cout << "Enter the number of certificates you submit: ";
+	cin >> num_Certi;
+	for (int i = 0; i < num_Certi; i++)
+	{
+		Certificate p_Certi;
+		Certi.push_back(p_Certi);
+		p_Certi.EnterCertificateInfo();
+	}
+}
+
+void Employee::ShowCertificates()
+{
+	for (int i = 0; i < Certi.size(); i++)
+	{
+		Certi[i].ShowCertificateInfo();
+	}
+}

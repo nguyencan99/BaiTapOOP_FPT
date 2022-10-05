@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2622593d-9446-4dd7-85a0-34001cf9621a}</ProjectGuid>
-    <RootNamespace>Bai13QuanLyNVCTy</RootNamespace>
+    <ProjectGuid>{47f3ab01-79ac-4f98-a530-263096449dc2}</ProjectGuid>
+    <RootNamespace>Bai14TuyenSinhSauDH</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,18 +70,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -139,25 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Certificate.h" />
-    <ClInclude Include="CheckValidation.h" />
-    <ClInclude Include="Employee.h" />
-    <ClInclude Include="EmployeeManagement.h" />
+    <ClInclude Include="checkValidation.h" />
     <ClInclude Include="Exception.h" />
-    <ClInclude Include="Experience.h" />
-    <ClInclude Include="Fresher.h" />
-    <ClInclude Include="Intern.h" />
+    <ClInclude Include="GoodStudent.h" />
     <ClInclude Include="Library.h" />
+    <ClInclude Include="NormalStudent.h" />
+    <ClInclude Include="RecuitmentPro.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Certificate.cpp" />
-    <ClCompile Include="CheckValidation.cpp" />
-    <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="EmployeeManagement.cpp" />
-    <ClCompile Include="Experience.cpp" />
-    <ClCompile Include="Fresher.cpp" />
-    <ClCompile Include="Intern.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="checkValidation.cpp" />
+    <ClCompile Include="GoodStudent.cpp" />
+    <ClCompile Include="NormalStudent.cpp" />
+    <ClCompile Include="RecuitmentPro.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

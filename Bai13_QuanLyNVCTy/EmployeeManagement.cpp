@@ -47,7 +47,22 @@ void EmployeeManagement::addEmployee()
             employee.push_back(pEmp);
         }
 
-        if (pEmp != NULL)     pEmp->EnterInfo();
+        if (pEmp != NULL)
+        {
+            pEmp->EnterInfo();
+
+            char choise;
+            cout << "Enter the certificate information (Y/N): ";
+            cin >> choise;
+            if (choise == 'Y')
+            {
+                pEmp->EnterCirtificates();
+            }
+            if (choise == 'N')
+            {
+                continue;
+            }
+        }
     }
 }
 void EmployeeManagement::modifyEmployeeInfoByID(string id)
